@@ -1,76 +1,72 @@
-Credit Lending Analysis
+# 📊 Credit Lending Analysis
 
-This project analyzes credit lending patterns by combining internal bank data with CIBIL datasets. 
-The objective is to clean, integrate, and visualize data to support better loan approval decisions and credit risk management.
+## 🔍 Overview
+This project analyzes credit lending patterns by integrating internal bank data with CIBIL datasets. The goal is to clean, merge, and analyze data to generate insights that support loan approval decisions and credit risk management.
 
-# Project Workflow
+---
 
-Loaded and explored datasets (Bank Internal & CIBIL)
+## 🎯 Objective
+- Analyze customer credit profiles  
+- Identify patterns in lending behavior  
+- Support data-driven loan approval decisions  
+- Highlight potential credit risks  
 
-Removed null/missing values and standardized fields
+---
 
-Merged datasets to create a unified credit profile
+## ⚙️ Project Workflow
+- Loaded and explored datasets (Bank Internal & CIBIL)  
+- Cleaned data by handling missing values and inconsistencies  
+- Merged datasets to create a unified customer credit profile  
+- Performed data transformations for analysis readiness  
+- Conducted exploratory data analysis (EDA)  
+- Visualized key patterns using charts  
 
-Performed data transformations for consistency
+---
 
-Visualized patterns using Matplotlib
+## 🛠 Tech Stack
+- **Python (Jupyter Notebook)**  
+- **Pandas, NumPy** – Data Cleaning & Manipulation  
+- **Matplotlib** – Data Visualization  
+- **Excel** – Dataset Source  
 
-Tools & Libraries
+---
 
-Python (Jupyter Notebook)
+## 📊 Key Analysis
+- Credit Score Distribution  
+- Loan Amount vs Credit Score Relationship  
+- Identification of missing and inconsistent data patterns  
+- Customer-level financial behavior analysis  
 
-Pandas, NumPy – Data Cleaning & Manipulation
+---
 
-Matplotlib – Data Visualization
+## 📈 Key Insights
+- Customers with higher credit scores tend to receive larger loan amounts  
+- Missing data patterns highlight potential data quality issues  
+- Credit score distribution shows variation in customer risk levels  
+- Strong relationship observed between creditworthiness and lending decisions  
 
-Excel – Raw Dataset Format
+---
 
-Sample Code
-# Import libraries
+## 📷 Visualizations
+(Add your screenshots here)
+
+---
+
+## 💻 Sample Code
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Load datasets
 bank_data = pd.read_excel("case_study1.xlsx")
 cibil_data = pd.read_excel("case_study2.xlsx")
 
-# Preview data
-print(bank_data.head())
-print(cibil_data.head())
-
-# Merge datasets
 merged_df = pd.merge(bank_data, cibil_data, on="Customer_ID", how="inner")
-
-# Handle missing values
 merged_df.fillna(0, inplace=True)
 
-# Summary statistics
-print(merged_df.describe())
-
-# Credit Score Distribution
-plt.figure(figsize=(8,5))
-merged_df['Credit_Score'].hist(bins=20, color="skyblue", edgecolor="black")
-plt.title("Credit Score Distribution")
-plt.xlabel("Credit Score")
-plt.ylabel("Frequency")
+merged_df['Credit_Score'].hist(bins=20)
 plt.show()
 
-# Loan Amount vs Credit Score
-plt.figure(figsize=(8,5))
-plt.scatter(merged_df['Credit_Score'], merged_df['Loan_Amount'], alpha=0.5)
-plt.title("Loan Amount vs Credit Score")
-plt.xlabel("Credit Score")
-plt.ylabel("Loan Amount")
-plt.show()
 
-# Key Outcomes
-
-Cleaned and merged datasets for accurate analysis
-
-Identified gaps and missing patterns in credit data
-
-Visualized customer credit trends and lending risks
-
-Delivered insights useful for loan decision-making
-
+## 🚀 Outcome
+Successfully transformed raw financial data into meaningful insights, demonstrating strong skills in data cleaning, data integration, exploratory analysis, and visualization.
